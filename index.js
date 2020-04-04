@@ -2,8 +2,9 @@ let express = require("express");
 let app = express();
 let server = require("http").createServer(app);
 let io = require("socket.io").listen(server);
+const PORT = process.env.PORT || 5000;
 
-server.listen(3000);
+server.listen(PORT);
 
 app.get("/", function(request, respons) {
     respons.sendFile(__dirname + "/index.html");
